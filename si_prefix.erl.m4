@@ -1,5 +1,21 @@
 HEADER(Module SI-Prefix)
+DOCCOMMENT(``#'' Module SI-Prefix)
 -module(si_prefix).
+
+SUBSECTION(Exports)
+DOCCOMMENT(This module exports the following functions:)
+DOCCOMMENT(1. to_pico/1)
+DOCCOMMENT(2. to_nano/1)
+DOCCOMMENT(3. to_micro/1)
+DOCCOMMENT(4. to_mili/1)
+DOCCOMMENT(5. to_centi/1)
+DOCCOMMENT(6. to_deci/1)
+DOCCOMMENT(7. to_deka/1)
+DOCCOMMENT(8. to_hecto/1)
+DOCCOMMENT(9. to_kilo/1)
+DOCCOMMENT(10. to_mega/1)
+DOCCOMMENT(11. to_giga/1)
+DOCCOMMENT(12. to_tera/1)
 -export([to_pico/1,  to_nano/1,
          to_micro/1, to_mili/1,
          to_centi/1, to_deci/1,
@@ -8,9 +24,15 @@ HEADER(Module SI-Prefix)
          to_giga/1,  to_tera/1]).
 
 SUBSECTION(Includes)
+DOCCOMMENT(``#'' Imports)
+DOCCOMMENT(The module eunit is imported for unittesting this module.)
 -include_lib("eunit/include/eunit.hrl").
 
-MAINSECTION(Define Deka)
+MAINSECTION(Definitions)
+DOCCOMMENT(``#'' Definitions)
+SUBSECTION(Define Deka)
+DOCCOMMENT(``##'' to_deka)
+DOCCOMMENT(The function to_deka converts all accesible formats to deka($10^1$))
 to_deka({tera, N}) ->
   {deka, N*math:pow(10,11)};
 to_deka({giga, N}) ->
@@ -39,6 +61,8 @@ to_deka(N) ->
   {deka, N*math:pow(10,-1)}.
 
 SUBSECTION(Define Hecto)
+DOCCOMMENT(``##'' to_hecto)
+DOCCOMMENT(The function to_hecto converts all accesible formats to hecto($10^2$))
 to_hecto({tera, N}) ->
   {hecto, N*math:pow(10,10)};
 to_hecto({giga, N}) ->
@@ -67,6 +91,8 @@ to_hecto(N) ->
   {hecto, N*math:pow(10,-2)}.
 
 SUBSECTION(Define Kilo)
+DOCCOMMENT(``##'' to_kilo)
+DOCCOMMENT(The function to_kilo converts all accesible formats to kilo($10^3$))
 to_kilo({tera, N}) ->
   {kilo, N*math:pow(10,9)};
 to_kilo({giga, N}) ->
@@ -95,6 +121,8 @@ to_kilo(N) ->
   {kilo, N*math:pow(10,-3)}.
 
 SUBSECTION(Define Mega)
+DOCCOMMENT(``##'' to_mega)
+DOCCOMMENT(The function to_mega converts all accesible formats to mega($10^6$))
 to_mega({tera, N}) ->
   {mega, N*math:pow(10,6)};
 to_mega({giga, N}) ->
@@ -123,6 +151,8 @@ to_mega(N) ->
   {mega, N*math:pow(10,-6)}.
 
 SUBSECTION(Define Giga)
+DOCCOMMENT(``##'' to_giga)
+DOCCOMMENT(The function to_giga converts all accesible formats to mega($10^9$))
 to_giga({tera, N}) ->
   {giga, N*math:pow(10,3)};
 to_giga({giga, N}) ->
@@ -151,6 +181,8 @@ to_giga(N) ->
   {giga, N*math:pow(10,-9)}.
 
 SUBSECTION(Define Tera)
+DOCCOMMENT(``##'' to_tera)
+DOCCOMMENT(The function to_tera converts all accesible formats to tera($10^12$))
 to_tera({tera, N}) ->
   {tera, N};
 to_tera({giga, N}) ->
@@ -179,6 +211,8 @@ to_tera(N) ->
   {tera, N*math:pow(10,-12)}.
 
 SUBSECTION(Define Deci)
+DOCCOMMENT(``##'' to_deci)
+DOCCOMMENT(The function to_deci converts all accesible formats to deci($10^-1$))
 to_deci({pico, N}) ->
   {deci, N*math:pow(10,-11)};
 to_deci({nano, N}) ->
@@ -207,6 +241,8 @@ to_deci(N) ->
   {deci, N*math:pow(10,1)}.
 
 SUBSECTION(Define Centi)
+DOCCOMMENT(``##'' to_centi)
+DOCCOMMENT(The function to_centi converts all accesible formats to centi($10^-2$))
 to_centi({pico, N}) ->
   {centi, N*math:pow(10,-10)};
 to_centi({nano, N}) ->
@@ -235,6 +271,8 @@ to_centi(N) ->
   {centi, N*math:pow(10,2)}.
 
 SUBSECTION(Define Mili)
+DOCCOMMENT(``##'' to_mili)
+DOCCOMMENT(The function to_mili converts all accesible formats to mili($10^-3$))
 to_mili({pico, N}) ->
   {mili, N*math:pow(10,-9)};
 to_mili({nano, N}) ->
@@ -263,6 +301,8 @@ to_mili(N) ->
   {mili, N*math:pow(10,3)}.
 
 SUBSECTION(Define Micro)
+DOCCOMMENT(``##'' to_micro)
+DOCCOMMENT(The function to_mirco converts all accesible formats to micro($10^-6$))
 to_micro({pico, N}) ->
   {micro, N*math:pow(10,-6)};
 to_micro({nano, N}) ->
@@ -291,6 +331,8 @@ to_micro(N) ->
   {micro, N*math:pow(10,6)}.
 
 SUBSECTION(Define Nano)
+DOCCOMMENT(``##'' to_nano)
+DOCCOMMENT(The function to_nano converts all accesible formats to nano($10^-9$))
 to_nano({pico, N}) ->
   {nano, N*math:pow(10,-3)};
 to_nano({nano, N}) ->
@@ -319,6 +361,8 @@ to_nano(N) ->
   {nano, N*math:pow(10,9)}.
 
 SUBSECTION(Define Pico)
+DOCCOMMENT(``##'' to_pico)
+DOCCOMMENT(The function to_pico converts all accesible formats to pico($10^-12$))
 to_pico({pico, N}) ->
   {pico, N};
 to_pico({nano, N}) ->
@@ -346,7 +390,8 @@ to_pico({tera, N}) ->
 to_pico(N) ->
   {pico, N*math:pow(10,12)}.
 
-MAINSECTION(Test Nano)
+MAINSECTION(Tests)
+SUBSECTION(Test Nano)
 to_nano_test() ->
   ?assert(to_nano({tera,    1.0}) =:= {nano, 1000000000000000000000.0}),
   ?assert(to_nano({giga,    1.0}) =:= {nano, 1000000000000000000.0}),

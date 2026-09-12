@@ -5,7 +5,7 @@ dnl # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 dnl # ------------------------------------------------------------------
 dnl # Project:  https://github.com/ad2108/m4-embellished-comments
 dnl # Author:   ad2108
-dnl # Date:     02.08.2026
+dnl # Date:     12.09.2026
 dnl # Version:  1.0.3
 dnl # License:  MIT
 dnl # ------------------------------------------------------------------
@@ -20,7 +20,7 @@ dnl # ------------------------------------------------------------------
 dnl # Doc Comments
 dnl # ------------------------------------------------------------------
 dnl
-define(`DOCCOMMENT',`DOC_COMMENT_SIGN_START $1 DOC_COMMENT_SIGH_END')dnl
+define(`DOCCOMMENT',`DOC_COMMENT_SIGN_START $1 DOC_COMMENT_SIGN_END')dnl
 dnl
 dnl # ------------------------------------------------------------------
 dnl # Simple Separators
