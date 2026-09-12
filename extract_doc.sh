@@ -14,7 +14,7 @@
 # ----------------------------------------------------------------------- 
 # Create Documentation
 # ----------------------------------------------------------------------- 
-files=$(ls *.erl)
+files=$(ls src/*.erl)
 for file in $files; do
   awk '/%! / {print $0; print "";}' $file | sed 's/%! //g' | sed 's/\_/\\_/g' > doc.md
 done
